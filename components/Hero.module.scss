@@ -1,0 +1,258 @@
+.hero {
+  display: flex;
+  min-height: min(740px, calc(100svh - 77px));
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(4rem, 9vw, 7.5rem) var(--page-gutter) 2rem;
+}
+
+.heroInner {
+  display: grid;
+  width: min(100%, var(--content-width));
+  margin: 0 auto;
+  align-items: center;
+  gap: clamp(3rem, 8vw, 7rem);
+}
+
+.copy {
+  max-width: 690px;
+}
+
+.eyebrow {
+  display: flex;
+  margin: 0 0 1.55rem;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--color-muted);
+  font-size: 0.76rem;
+  font-weight: 650;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.statusDot {
+  width: 0.45rem;
+  height: 0.45rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.copy h1 {
+  margin: 0;
+  font-size: clamp(3rem, 8.5vw, 6.4rem);
+  font-weight: 750;
+  letter-spacing: -0.075em;
+  line-height: 0.98;
+}
+
+.copy h1 span {
+  color: var(--color-accent);
+}
+
+.role {
+  margin: 1.25rem 0 0;
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.intro {
+  max-width: 610px;
+  margin: 1rem 0 0;
+  color: var(--color-muted);
+  font-size: clamp(0.98rem, 1.35vw, 1.08rem);
+  line-height: 1.8;
+}
+
+.actions {
+  display: flex;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  min-height: 3.15rem;
+  padding: 0.75rem 1.1rem;
+  border: 1px solid transparent;
+  border-radius: 0.6rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 650;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.primaryButton {
+  background: var(--color-ink);
+  color: #fff;
+}
+
+.primaryButton:hover {
+  background: var(--color-accent);
+  transform: translateY(-1px);
+}
+
+.secondaryButton {
+  border-color: var(--color-line);
+  background: transparent;
+}
+
+.secondaryButton:hover {
+  border-color: var(--color-ink);
+  background: var(--color-surface);
+  transform: translateY(-1px);
+}
+
+.socials {
+  display: flex;
+  margin-top: 2.25rem;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.socialLabel {
+  color: var(--color-subtle);
+  font-size: 0.8rem;
+}
+
+.socials a {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: color 160ms ease;
+}
+
+.socials a:hover {
+  color: var(--color-accent);
+}
+
+.socials a span {
+  color: var(--color-accent);
+}
+
+.focusCard {
+  display: flex;
+  min-height: 290px;
+  padding: 1.35rem;
+  border: 1px solid var(--color-line);
+  border-radius: 0.9rem;
+  background: var(--color-surface);
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 24px 65px rgb(32 33 31 / 5%);
+}
+
+.cardTop,
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardLabel,
+.cardIndex,
+.cardCaption {
+  color: var(--color-subtle);
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.cardIndex {
+  letter-spacing: 0.06em;
+}
+
+.cardMain {
+  padding: 2rem 0 2.2rem;
+}
+
+.cardMain p {
+  margin: 0.3rem 0 0;
+  font-size: clamp(2.3rem, 5vw, 3.7rem);
+  font-weight: 700;
+  letter-spacing: -0.075em;
+  line-height: 1.05;
+}
+
+.cardMain p span {
+  color: var(--color-accent);
+  font-weight: 400;
+}
+
+.cardFooter {
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-line);
+}
+
+.cardFooter > div {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.cardFooter strong {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.cardArrow {
+  display: grid;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  place-items: center;
+}
+
+.heroBottom {
+  display: flex;
+  width: min(100%, var(--content-width));
+  margin: auto auto 0;
+  padding-top: 2rem;
+  justify-content: space-between;
+  color: var(--color-subtle);
+  font-size: 0.74rem;
+}
+
+.heroBottom b {
+  padding-left: 0.35rem;
+  color: var(--color-accent);
+}
+
+@media (min-width: 900px) {
+  .heroInner {
+    grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.8fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .hero {
+    min-height: auto;
+    padding-top: 4rem;
+  }
+
+  .eyebrow {
+    flex-wrap: wrap;
+    font-size: 0.68rem;
+  }
+
+  .focusCard {
+    min-height: 230px;
+  }
+
+  .heroBottom {
+    margin-top: 3rem;
+    font-size: 0.66rem;
+  }
+}

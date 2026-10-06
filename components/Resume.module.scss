@@ -1,0 +1,60 @@
+.section {
+  padding: clamp(2.5rem, 6vw, 4rem) var(--page-gutter);
+  background: var(--color-ink);
+  color: white;
+}
+
+.inner {
+  display: flex;
+  width: min(100%, var(--content-width));
+  margin-inline: auto;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.55rem;
+  color: #e5a18e;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.inner h2 {
+  max-width: 570px;
+  margin: 0;
+  font-size: clamp(1.65rem, 4vw, 2.5rem);
+  letter-spacing: -0.055em;
+  line-height: 1.2;
+}
+
+.button {
+  display: inline-flex;
+  min-height: 3rem;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgb(255 255 255 / 25%);
+  border-radius: 0.55rem;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.87rem;
+  font-weight: 650;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.button:hover {
+  background: white;
+  color: var(--color-ink);
+}
+
+@media (min-width: 760px) {
+  .inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}

@@ -1,0 +1,159 @@
+.header {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  border-bottom: 1px solid rgb(32 33 31 / 7%);
+  background: rgb(247 247 245 / 94%);
+  backdrop-filter: blur(14px);
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  width: min(100% - (var(--page-gutter) * 2), var(--content-width));
+  min-height: 76px;
+  margin-inline: auto;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.96rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.brandMark {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.55rem;
+  background: var(--color-ink);
+  color: white;
+  font-size: 0.68rem;
+  letter-spacing: -0.04em;
+  place-items: center;
+}
+
+.navigation {
+  position: absolute;
+  top: calc(100% + 1px);
+  right: calc(var(--page-gutter) * -1);
+  left: calc(var(--page-gutter) * -1);
+  display: none;
+  padding: 0.65rem var(--page-gutter) 1.25rem;
+  border-bottom: 1px solid var(--color-line);
+  background: var(--color-canvas);
+}
+
+.navigationOpen {
+  display: flex;
+  flex-direction: column;
+}
+
+.navLink,
+.contactLink {
+  padding: 0.8rem 0;
+  color: var(--color-muted);
+  font-size: 0.94rem;
+  font-weight: 500;
+  transition: color 160ms ease;
+}
+
+.navLink:hover,
+.contactLink:hover {
+  color: var(--color-accent);
+}
+
+.contactLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-ink);
+  font-weight: 650;
+}
+
+.contactLink span {
+  color: var(--color-accent);
+}
+
+.menuButton {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--color-line);
+  border-radius: 0.65rem;
+  background: transparent;
+  cursor: pointer;
+  place-items: center;
+}
+
+.menuIcon,
+.menuIconOpen {
+  display: flex;
+  width: 1.1rem;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.menuIcon span,
+.menuIconOpen span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  border-radius: 2px;
+  background: var(--color-ink);
+  transition: transform 160ms ease;
+}
+
+.menuIconOpen span:first-child {
+  transform: translateY(3.25px) rotate(45deg);
+}
+
+.menuIconOpen span:last-child {
+  transform: translateY(-3.25px) rotate(-45deg);
+}
+
+@media (min-width: 760px) {
+  .navigation {
+    position: static;
+    display: flex;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    align-items: center;
+    gap: clamp(1.25rem, 2.4vw, 2rem);
+  }
+
+  .navLink {
+    padding: 0.5rem 0;
+    font-size: 0.88rem;
+  }
+
+  .contactLink {
+    display: inline-flex;
+    padding: 0.62rem 0.95rem;
+    border: 1px solid var(--color-line);
+    border-radius: 0.55rem;
+    gap: 0.55rem;
+    font-size: 0.88rem;
+    transition:
+      border-color 160ms ease,
+      color 160ms ease,
+      background-color 160ms ease;
+  }
+
+  .contactLink:hover {
+    border-color: var(--color-ink);
+    background: var(--color-ink);
+    color: white;
+  }
+
+  .menuButton {
+    display: none;
+  }
+}
